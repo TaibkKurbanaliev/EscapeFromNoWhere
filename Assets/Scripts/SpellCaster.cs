@@ -11,18 +11,28 @@ public class SpellCaster : MonoBehaviour
 
     public void Initialize()
     {
+
+    }
+
+    private void OnEnable()
+    {
         _attackAction.action.performed += OnAttackPerformed;
+    }
+
+    private void OnDisable()
+    {
+        _attackAction.action.performed -= OnAttackPerformed;
     }
 
     private void OnAttackPerformed(InputAction.CallbackContext context)
     {
-        Debug.Log("Attack");
         var cursorPosition = _camera.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
+
         if (Physics.Raycast(cursorPosition, out RaycastHit hitInfo))
         {
             var spell = Instantiate(_currentSpell, _castPoint.position, Quaternion.identity);
             spell.Initialize();
-            spell.Cast(hitInfo.point);
+            spell.Cast((hitInfo.point - transform.position).normalized);
         }
     }
 }

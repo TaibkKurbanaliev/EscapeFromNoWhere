@@ -14714,5 +14714,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Icon: {fileID: 21300000, guid: ad71c90b28196584aa5693c42cb430ba, type: 3}
-  <Damage>k__BackingField: 0
+  <Damage>k__BackingField: 10
   <Speed>k__BackingField: 10

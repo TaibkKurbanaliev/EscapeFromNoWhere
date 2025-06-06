@@ -7,7 +7,6 @@ public abstract class ProjectileSpell : Spell
 
     protected Rigidbody Rb { get; private set; }
 
-
     public override void Initialize()
     {
         base.Initialize();
@@ -16,6 +15,11 @@ public abstract class ProjectileSpell : Spell
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.TryGetComponent(out IDamagable damagable) && other.TryGetComponent(out Enemy enemy))
+        {
+            damagable.TakeDamage(Damage);
+        }
+
         Destroy(gameObject);
     }
 }

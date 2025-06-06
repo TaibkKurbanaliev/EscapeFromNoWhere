@@ -9,6 +9,7 @@ public class Fireball : ProjectileSpell
 
     public override void Cast(Vector3 target)
     {
+        target.y = 0;
         Rb.AddForce(target.normalized * Speed, ForceMode.Impulse);
     }
 
