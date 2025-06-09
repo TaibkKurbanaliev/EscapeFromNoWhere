@@ -51,10 +51,10 @@ public class LoadingManager : MonoBehaviour
         _progressBar.ShowCompleteButton();
         yield return new WaitUntil(AnyInputDetected);
 
-        scene.allowSceneActivation = true;
         _progressBar.gameObject.SetActive(false);
 
         yield return _sceneTransition.AnimationOut();
+        scene.allowSceneActivation = true;
     }
 
     private bool AnyInputDetected()
