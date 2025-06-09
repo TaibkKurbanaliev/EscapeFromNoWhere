@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ShopContent", menuName = "Shop/ShopContent")]
+[CreateAssetMenu(fileName = "ShopContent", menuName = "Shop/shopContent")]
 public class ShopContent : ScriptableObject
 {
-    [SerializeField] private List<Item> _shopItems;
-    
-    public IEnumerable<Item> ShopItems => _shopItems;
+    [SerializeField] private List<ShopItem> _shopItems;
+
+    public IEnumerable<ShopItem> ShopItems => _shopItems;
 }

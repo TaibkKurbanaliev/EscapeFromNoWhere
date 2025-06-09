@@ -1,17 +1,15 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Shop
+public class Shop : MonoBehaviour 
 {
-    private List<Item> _items = new();
+    [SerializeField] private ShopContent _contentItems;
 
-    public void ShowItems()
+    [SerializeField] private ShopPanel _shopPanel;
+
+    private void Awake()
     {
-
-    }
-
-    public Item BuyItem()
-    {
-        return null;
+        _shopPanel.Show(_contentItems.ShopItems.Cast<ShopItem>());
     }
 }

@@ -10,9 +10,34 @@ public class ShopPanel : MonoBehaviour
 
     public void Show(IEnumerable<ShopItem> items)
     {
+        Clear();
+
         foreach (var item in items)
         {
             ShopItemView spawnedItem = _shopItemViewFactory.Get(item, _itemsParent);
+
+            spawnedItem.Click += OnItemViewClick;
+
+            spawnedItem.UnSelect();
+            spawnedItem.UnHighlight();
+
+            _shopItems.Add(spawnedItem);
         }
+    }
+
+    private void OnItemViewClick(ShopItemView item)
+    {
+
+    }
+
+    private void Clear()
+    {
+        foreach (var item in _shopItems)
+        {
+            item.Click -= OnItemViewClick;
+            Destroy(item.gameObject);
+        }
+
+        _shopItems.Clear();
     }
 }

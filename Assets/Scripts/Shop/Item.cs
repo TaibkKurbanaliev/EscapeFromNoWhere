@@ -1,7 +1,7 @@
 using UnityEngine;
 
-public abstract class Item 
+public abstract class Item : MonoBehaviour
 {
-    public Sprite Icon {  get; private set; }
-    public int Cost {  get; private set; }
+    [field: SerializeField] public Sprite Icon {  get; private set; }
+    [field: SerializeField] public int Cost {  get; private set; }
 }
