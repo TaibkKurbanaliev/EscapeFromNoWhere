@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510ded34dee3d904ea05a03c675ed9cc, type: 3}
   m_Name: ShopItem
   m_EditorClassIdentifier: 
-  <Icon>k__BackingField: {fileID: 0}
-  <Name>k__BackingField: 
-  <Coast>k__BackingField: 0
+  <Icon>k__BackingField: {fileID: 21300000, guid: a5533f1ce2be55246977d08c767d4e4e, type: 3}
+  <Name>k__BackingField: Kek
+  <Coast>k__BackingField: 20130

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Seller : MonoBehaviour, IInteractable
 {
-    [SerializeField] private Material _outlineMaterial;
+    
     
     private Shop _shop;
 
@@ -13,11 +13,6 @@ public class Seller : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-
+        Debug.Log("Sosal");
     }
 }

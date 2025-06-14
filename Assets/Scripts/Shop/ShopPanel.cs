@@ -1,8 +1,11 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ShopPanel : MonoBehaviour
 {
+    public event Action<ShopItemView> ItemViewClicked;
+
     [SerializeField] private Transform _itemsParent;
     [SerializeField] private ShopItemViewFactory _shopItemViewFactory;
 
@@ -27,7 +30,18 @@ public class ShopPanel : MonoBehaviour
 
     private void OnItemViewClick(ShopItemView item)
     {
+        Highlight(item);
+        ItemViewClicked?.Invoke(item);
+    }
 
+    private void Highlight(ShopItemView itemView)
+    {
+        foreach (var item in _shopItems)
+        {
+            item.UnHighlight();
+        }
+
+        itemView.Highlight();
     }
 
     private void Clear()
