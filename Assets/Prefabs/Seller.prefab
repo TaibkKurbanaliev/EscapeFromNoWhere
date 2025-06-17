@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 6566662428590581829}
   - component: {fileID: 7903645549870342887}
   - component: {fileID: 5092045726219130251}
-  m_Layer: 0
+  - component: {fileID: 4990012560082608055}
+  m_Layer: 8
   m_Name: Seller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +109,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3, y: 1, z: 3}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5092045726219130251
 MonoBehaviour:
@@ -122,6 +123,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57d81a5adc2e11a48b5c2fcafc7a3e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &4990012560082608055
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2432970483876353827}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 1, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5339177212090317349
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +155,7 @@ GameObject:
   - component: {fileID: 3573176453966263872}
   - component: {fileID: 2625583112232793751}
   - component: {fileID: 9131653077949419382}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

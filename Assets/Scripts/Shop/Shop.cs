@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour 
 {
-    [SerializeField] private ShopContent _contentItems;
-
     [SerializeField] private ShopPanel _shopPanel;
 
-    private void Awake()
-    {
-        _shopPanel.Show(_contentItems.ShopItems.Cast<ShopItem>());
-    }
+    public void Show(ShopContent content) => _shopPanel.Show(content.ShopItems.Cast<ShopItem>());
 }

@@ -2,41 +2,34 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopPanel : MonoBehaviour
+public class ShopPanel : Panel
 {
-    public event Action<ShopItemView> ItemViewClicked;
-
-    [SerializeField] private Transform _itemsParent;
-    [SerializeField] private ShopItemViewFactory _shopItemViewFactory;
-
-    private List<ShopItemView> _shopItems = new();
-
     public void Show(IEnumerable<ShopItem> items)
     {
         Clear();
 
         foreach (var item in items)
         {
-            ShopItemView spawnedItem = _shopItemViewFactory.Get(item, _itemsParent);
+            ShopItemView spawnedItem = ItemViewFactory.Get(item, ItemsParent);
 
             spawnedItem.Click += OnItemViewClick;
 
             spawnedItem.UnSelect();
             spawnedItem.UnHighlight();
 
-            _shopItems.Add(spawnedItem);
+            ShopItems.Add(spawnedItem);
         }
     }
 
-    private void OnItemViewClick(ShopItemView item)
+    protected override void OnItemViewClick(ShopItemView item)
     {
+        base.OnItemViewClick(item);
         Highlight(item);
-        ItemViewClicked?.Invoke(item);
     }
 
     private void Highlight(ShopItemView itemView)
     {
-        foreach (var item in _shopItems)
+        foreach (var item in ShopItems)
         {
             item.UnHighlight();
         }
@@ -46,12 +39,12 @@ public class ShopPanel : MonoBehaviour
 
     private void Clear()
     {
-        foreach (var item in _shopItems)
+        foreach (var item in ShopItems)
         {
             item.Click -= OnItemViewClick;
             Destroy(item.gameObject);
         }
 
-        _shopItems.Clear();
+        ShopItems.Clear();
     }
 }
