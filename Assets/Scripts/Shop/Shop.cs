@@ -1,10 +1,12 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-public class Shop : MonoBehaviour 
+public class Shop : MonoBehaviour
 {
-    [SerializeField] private ShopPanel _shopPanel;
+    [SerializeField] private Panel _panel;
 
-    public void Show(ShopContent content) => _shopPanel.Show(content.ShopItems.Cast<ShopItem>());
+    public void Show(Content content)
+    {
+        _panel.Show(content.Items);
+    }
 }
